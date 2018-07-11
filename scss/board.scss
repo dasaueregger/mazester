@@ -1,0 +1,60 @@
+$elementsize: 30px;
+$pathsize: 6px;
+
+.row{
+  display: flex;
+}
+.element {
+  position: relative;
+  height: $elementsize;
+  width: $elementsize;
+  background-color:red;
+  margin:0;
+  
+}
+
+.left{
+  top: $elementsize/2-$pathsize/2;
+  height: $pathsize;
+  width: $elementsize/2+$pathsize/2;
+}
+
+.right {
+  top: $elementsize/2-$pathsize/2;
+  left: $elementsize/2-$pathsize/2;
+  height: $pathsize;
+  width: $elementsize/2+$pathsize/2;
+}
+
+.top {
+  left: $elementsize/2-$pathsize/2;
+  width: $pathsize;
+  height: $elementsize/2+$pathsize/2;
+}
+
+.bottom {
+  left: $elementsize/2-$pathsize/2;
+  top: $elementsize/2-$pathsize/2;
+  width: $pathsize;
+  height: $elementsize/2+$pathsize/2;
+}
+
+.path{
+  position: absolute;
+  background-color: white;
+}
+
+.board{
+  position: relative;
+}
+
+.ball{
+  position: absolute;
+  background-color: black;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+}
