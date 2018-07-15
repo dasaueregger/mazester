@@ -124,7 +124,8 @@ function paintGrid(grid) {
 
 function shuffle(array) {
   let currentIndex = array.length;
-  let temporaryValue; let randomIndex;
+  let temporaryValue;
+  let randomIndex;
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
     // Pick a remaining element...
@@ -146,9 +147,9 @@ let recursiveback = function(grid) {
       nx = x + e[0];
       ny = y + e[1];
       if ((nx < grid.length) &&
-          (ny < grid[0].length) &&
-          (nx >= 0) && (ny >= 0) &&
-          (grid[nx][ny] === 1)) {
+        (ny < grid[0].length) &&
+        (nx >= 0) && (ny >= 0) &&
+        (grid[nx][ny] === 1)) {
         grid[x][y] *= e[2];
         grid[nx][ny] *= e[3];
         moveTo(nx, ny);
@@ -180,18 +181,38 @@ class Ball {
   constructor() {
     this.x = 0;
     this.y = 0;
+    this.active = true;
   }
 
-  move(direction) {}
+  move(direction) {
+    console.log(direction);
+  }
   getx() {
     return this.x;
   }
   gety() {
-     return this.y;
+    return this.y;
   }
 }
 
-const o = new Ball();
+class Player {
+  constructor(name) {
+    this.name = name;
+    this.x = 0;
+    this.y = 0;
+  }
+  showname() {
+    console.log(this.name);
+  }
+}
 
+document.addEventListener('keypress', (event) => {
+  const keyName = event.key;
+});
+
+const ball = new Ball();
+const player = new Player('hans');
+player.showname();
 
 paintGrid(createMaze(20, 10, recursiveback));
+
