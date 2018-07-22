@@ -1,5 +1,5 @@
-$elementsize: 30px;
-$pathsize: 6px;
+$elementsize: 50px;
+$pathsize: 16px;
 
 .row{
   display: flex;
@@ -51,10 +51,10 @@ $pathsize: 6px;
 .ball{
   position: absolute;
   background-color: black;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 30%;
   z-index: 100;
-  top: 12px;
-  left: 12px;
+  top: 17px;
+  left: 17px;
 }

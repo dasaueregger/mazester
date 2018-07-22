@@ -86,8 +86,26 @@ class Board {
 
     paintBall(ballnr) {
         const ball = document.querySelector('.ball');
-        ball.style.left = 12 + 30* this.balllist[ballnr].x + 'px';
-        ball.style.top = 12 + 30* this.balllist[ballnr].y + 'px';
+        let tranx = 50* this.balllist[ballnr].x;
+        let trany = 50* this.balllist[ballnr].y;
+        anime({
+            targets: '.ball',
+            translateX: [
+              { value: tranx, duration: 220 },
+            ],
+            translateY:[
+              { value: trany, duration: 220 },
+            ],
+            rotate: {
+                value: 360,
+                duration: 230,
+                easing: 'easeInOutSine'
+              },
+            easing: 'easeInOutQuad',
+         
+          });
+        // ball.style.left = 12 + 30* this.balllist[ballnr].x + 'px';
+        // ball.style.top = 12 + 30* this.balllist[ballnr].y + 'px';
 
     }
 
@@ -232,7 +250,7 @@ class Ball {
 
 let maze = (function() {
 
-    let board = new Board(10, 20);
+    let board = new Board(30, 10);
     board.createMaze();
     board.paintMaze();
     board.addBall(0, 0);
